@@ -402,7 +402,9 @@ class _FlutterEarthState extends State<FlutterEarth>
 
   Mesh initMeshFaces(Mesh mesh, int subdivisionsX, int subdivisionsY) {
     final int faceCount = subdivisionsX * subdivisionsY * 2;
-    final List<Polygon> faces = <Polygon>[]; // faceCount;
+    final List<Polygon> faces =
+        List.generate(faceCount, (index) => Polygon(0, 0, 0));
+    //<Polygon>[]; // faceCount;
     final Float32List positionsZ = mesh.positionsZ;
     int indexOffset = mesh.indexCount;
     double z = 0.0;
