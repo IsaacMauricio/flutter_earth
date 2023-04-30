@@ -357,7 +357,8 @@ class _FlutterEarthState extends State<FlutterEarth>
     final list = <Offset>[];
     final scale = math.pow(2.0, zoomLevel);
     final observed = HashMap<int, int>();
-    final lastKeys = <int>[]; //(clipRect.width ~/ 10 + 1);
+    final lastKeys = List.generate(clipRect.width ~/ 10 + 1, (index) => 0);
+    //<int>[]; //(clipRect.width ~/ 10 + 1);
     for (var y = clipRect.top; y < clipRect.bottom; y += 10.0) {
       var i = 0;
       for (var x = clipRect.left; x < clipRect.right; x += 10.0) {
