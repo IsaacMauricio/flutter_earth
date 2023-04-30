@@ -770,8 +770,7 @@ class _FlutterEarthState extends State<FlutterEarth>
   @override
   void initState() {
     super.initState();
-    tiles = <HashMap<int, Tile>>[]; //List(maxZoom + 1);
-    for (var i = 0; i <= maxZoom; i++) tiles[i] = HashMap<int, Tile>();
+    tiles = List.generate(maxZoom + 1, (index) => HashMap<int, Tile>());
 
     zoom = math.log(widget.radius / _radius) / math.ln2;
     _lastRotationAxis = Vector3(0, 0, 1.0);
